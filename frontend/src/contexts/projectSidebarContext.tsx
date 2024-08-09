@@ -19,11 +19,11 @@ function ProjectSidebarProvider({ children }: { children: React.ReactNode }) {
   const projectSidebarRef = useRef<HTMLDivElement>(null);
   const projectHeaderRef = useRef<HTMLDivElement>(null);
 
-  // useOutsideClick(
-  //   () => setIsProjectSidebarOpen(false),
-  //   projectSidebarRef,
-  //   projectHeaderRef,
-  // );
+  useOutsideClick(
+    () => setIsProjectSidebarOpen(false),
+    projectSidebarRef,
+    projectHeaderRef,
+  );
 
   function toggleProjectSidebar() {
     setIsProjectSidebarOpen((isProjectSidebarOpen) => !isProjectSidebarOpen);
@@ -34,8 +34,8 @@ function ProjectSidebarProvider({ children }: { children: React.ReactNode }) {
       value={{
         isProjectSidebarOpen,
         toggleProjectSidebar,
-        // projectSidebarRef,
-        // projectHeaderRef,
+        projectSidebarRef,
+        projectHeaderRef,
       }}
     >
       {children}

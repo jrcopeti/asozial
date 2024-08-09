@@ -1,5 +1,4 @@
 "use client";
-
 import { useThemeContext } from "@/context/ThemeContext";
 
 function Main({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -7,7 +6,7 @@ function Main({ children }: Readonly<{ children: React.ReactNode }>) {
 
   return (
     <main
-      className={`flex h-full w-full flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row ${theme === "light" ? "bg-light text-dark" : "bg-dark text-light"}`}
+      className={`flex h-full w-full transform transition-transform duration-300 ease-in-out ${theme === "light" ? "bg-light text-dark" : "bg-dark text-light"}`}
     >
       {children}
     </main>
